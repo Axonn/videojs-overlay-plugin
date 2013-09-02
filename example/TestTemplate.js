@@ -1,0 +1,1 @@
+(function(){dust.register("test",body_0);function body_0(chk,ctx){return chk.write("<div class=\"").reference(ctx.getPath(false,["model","class"]),ctx,"h").write("\">").reference(ctx.getPath(false,["model","name"]),ctx,"h",["s"]).write("</div>");}return body_0;})();
