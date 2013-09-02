@@ -24,7 +24,7 @@ module.exports = function (grunt) {
 	typescript: {
       src: {
         src: ['src/ts/*.ts'],
-        dest: 'build/js/vjsoverlay.js',
+        dest: 'build/js/vjsoverlayplugin.js',
         options: {
           module: 'amd', //or commonjs
           target: 'es5', //or es3
