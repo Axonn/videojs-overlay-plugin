@@ -14,7 +14,10 @@ module.exports = function (grunt) {
 		  src: "build/js/vjsoverlay.js",
 		  options: {
 			specs: "build/test/vjsoverlaytests.js",
-			vendor: "components/jquery/jquery.min.js",
+			vendor: [ 
+			  "bower_components/jquery/jquery.min.js",
+			  "bower_components/videojs-plugin-components/vjsplugincomponents.js"
+			]
 		  }
 	  }
     },
