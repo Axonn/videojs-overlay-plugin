@@ -5,15 +5,15 @@ before_script:
 - bower install
 env:
   global:
-  - secure: EyQ+4g03UKWmWZCjWsVpsj1FgYI8YN2ocRBzAwAkgPhN0BAx8BrOvlbKVyHWN/jArNmP/RyTXDeNEb5H/nszgiwptV1K4R3Cvl2Rwy73OUiYMlI5P3BbCdiDcJXwl7YakmO3g+5UEaRjVcXaLq3/awc9h5gdgRA5CrS/CVO/LeM=
+  - secure: jtjcflSmWkQJMqiRksC4tzhpqsYA4kSupt8JHkjJBF2AAdknJ+5d3X/N3EfVqr5yGMO8ODFGG14SRK8R+mz18pfPrPqjfh415ksK3w0+nZCcbovlAoC9j64BqtzJcbGpxbhrXsyzKaCz6Q2J7GfemVCjIo4vMjTZOXWAQPc0jek=
   - GH_OWNER: Axonn
   - GH_PROJECT_NAME: videojs-overlay-plugin
 after_success:
 - if git checkout master; then git checkout -b master; fi
 - cp build/js/vjsoverlayplugin.js vjsoverlayplugin.js
-- cp build/js/vjsoverlayplugin.d.ts vjsoverlayplugin.d.ts 
+- cp build/js/vjsoverlayplugin.d.ts vjsoverlayplugin.d.ts
 - git add -f vjsoverlayplugin.js
-- git add -f vjsoverlayplugin.d.ts 
+- git add -f vjsoverlayplugin.d.ts
 - git config user.name "travis-ci"
 - git config user.email "corwin.tomkinson@adfero.co.uk"
 - git commit -am "add build files to master [ci skip]"
