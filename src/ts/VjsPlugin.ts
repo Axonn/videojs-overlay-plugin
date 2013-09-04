@@ -3,5 +3,5 @@
 
 _V_.plugin("overlayPlugin", function (options) {
     var plugin = new Overlay.Plugin(this);
-    plugin.enable(options.overlays);
+    plugin.enable(options.videoOverlays, options.playerOverlays);
 });

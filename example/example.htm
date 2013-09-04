@@ -37,7 +37,23 @@
                 {
                 'plugins': {
                     'overlayPlugin': {
-						overlays: [{
+						videoOverlays: [{
+							template: {
+								name: "test"
+								},
+							model: {
+								class: "vjsLogo",
+								name: "OverlayPlugin"
+							},
+							displayTimes: [{
+								type: "switch",
+								start: function () { return 0.5 },
+								end: function () { return 5 }
+							}]
+						}],
+					
+					
+						videoOverlays: [{
 							template: {
 								name: "test"
 								},

@@ -9,8 +9,8 @@ module Overlay {
             this._player = new VjsPluginComponents.Player(player);
         }
 
-        enable(overlays: VjsPluginComponents.IOverlaySpecification[]) {
-            this._player.getVideo().overlays = overlays;
+        enable(videoOverlays: VjsPluginComponents.IOverlaySpecification[], playerOverlays?: VjsPluginComponents.IOverlaySpecification[]) {
+            this._player.getVideo().overlays = videoOverlays;
 
             var applyServiceToPlayer = VjsPluginComponents.ApplySingleService(this._player);
 
@@ -46,6 +46,12 @@ module Overlay {
             });
 
             var videoOverlayRepository = new VjsPluginComponents.OverlayRepository(new VjsPluginComponents.ObservableSubRepository(playerOverlayRepository, new VjsPluginComponents.Observable()), this._player, layerRepository, timeBasedEventRepository);
+
+            if (typeof (playerOverlays) !== "undefined") {
+                for (var i = 0; i < playerOverlays.length; i++) {
+                    videoOverlayRepository.createFromSpecification(playerOverlays[i]);
+                }
+            }
 
             var overlayManager = applyServiceToPlayer("OverlayManager")(() => {
                 return new VjsPluginComponents.OverlayManager(this._player, videoOverlayRepository)
