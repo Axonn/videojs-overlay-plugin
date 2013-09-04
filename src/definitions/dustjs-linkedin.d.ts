@@ -13,6 +13,7 @@
 // Fell free to include other methods. If possible let me know about.
 //
 
+
 declare var dust;
 
 declare module "dustjs-linkedin" {

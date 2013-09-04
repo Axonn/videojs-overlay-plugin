@@ -126,8 +126,50 @@
 								name: "test"
 								},
 							model: {
+								class: "testTop",
+								name: "These text boxes are just dust templates"
+							},
+							displayTimes: [{
+								type: "switch",
+								start: function () { return 29 },
+								end: function () { return 34 }
+							}]
+						},
+						{
+							template: {
+								name: "test"
+								},
+							model: {
+								class: "testTop",
+								name: "Rendered on top of the video at specific points"
+							},
+							displayTimes: [{
+								type: "switch",
+								start: function () { return 34 },
+								end: function () { return 38 }
+							}]
+						},
+						{
+							template: {
+								name: "test"
+								},
+							model: {
+								class: "testTop",
+								name: "you can even set them relative to the video's end."
+							},
+							displayTimes: [{
+								type: "switch",
+								start: function () { return 38 },
+								end: function (duration) { return (duration - 2) }
+							}]
+						},
+						{
+							template: {
+								name: "test"
+								},
+							model: {
 								class: "calltoaction",
-								name: "<h1>Like call to actions?</h1><p><span style='color:#EEBBBB'>So do we!</span> That's why we built this plugin.<br /><span style='color:#FFE177'>Check out our videos live at www.reelcontent.co.uk</span></p><a href='http://www.reelcontent.co.uk'><button class='css3button'>Sure, why not?</button></a>"
+								name: "<h1>Like call to actions?</h1><p><span style='color:#EEBBBB'>So do we!</span> That's why we built this plugin.<br /><span style='color:#FFE177'>Check out our videos live at <a href='http://www.reelcontent.co.uk'>www.reelcontent.co.uk</a></span></p><a href='http://www.reelcontent.co.uk'><button class='css3button'>Sure, why not?</button></a>"
 							},
 							displayTimes: [{
 								type: "switch",
