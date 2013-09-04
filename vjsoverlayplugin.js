@@ -4,9 +4,9 @@ var Overlay;
         function Plugin(player) {
             this._player = new VjsPluginComponents.Player(player);
         }
-        Plugin.prototype.enable = function (overlays) {
+        Plugin.prototype.enable = function (videoOverlays, playerOverlays) {
             var _this = this;
-            this._player.getVideo().overlays = overlays;
+            this._player.getVideo().overlays = videoOverlays;
 
             var applyServiceToPlayer = VjsPluginComponents.ApplySingleService(this._player);
 
@@ -40,6 +40,12 @@ var Overlay;
 
             var videoOverlayRepository = new VjsPluginComponents.OverlayRepository(new VjsPluginComponents.ObservableSubRepository(playerOverlayRepository, new VjsPluginComponents.Observable()), this._player, layerRepository, timeBasedEventRepository);
 
+            if (typeof (playerOverlays) !== "undefined") {
+                for (var i = 0; i < playerOverlays.length; i++) {
+                    videoOverlayRepository.createFromSpecification(playerOverlays[i]);
+                }
+            }
+
             var overlayManager = applyServiceToPlayer("OverlayManager")(function () {
                 return new VjsPluginComponents.OverlayManager(_this._player, videoOverlayRepository);
             });
@@ -50,6 +56,6 @@ var Overlay;
 })(Overlay || (Overlay = {}));
 _V_.plugin("overlayPlugin", function (options) {
     var plugin = new Overlay.Plugin(this);
-    plugin.enable(options.overlays);
+    plugin.enable(options.videoOverlays, options.playerOverlays);
 });
 //# sourceMappingURL=file:////home/travis/build/Axonn/videojs-overlay-plugin/build/js/vjsoverlayplugin.js.map

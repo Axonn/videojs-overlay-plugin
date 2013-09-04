@@ -6,6 +6,6 @@ declare module Overlay {
     class Plugin {
         public _player: VjsPluginComponents.IPlayer;
         constructor(player);
-        public enable(overlays: VjsPluginComponents.IOverlaySpecification[]): void;
+        public enable(videoOverlays: VjsPluginComponents.IOverlaySpecification[], playerOverlays?: VjsPluginComponents.IOverlaySpecification[]): void;
     }
 }
