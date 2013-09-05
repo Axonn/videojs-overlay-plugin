@@ -148,3 +148,14 @@ button.css3button {
         background: -moz-linear-gradient( top, #FFE177 0%, #FFDB56);
         background: -webkit-gradient( linear, left top, left bottom, from(#FFE177), to(#FFDB56));
     }
+	
+div.vjsLogo {
+    opacity: 0.3;
+    position: absolute;
+    z-index: 1;
+	bottom:0;
+	right:0;
+    font-size: 3em;
+	font-family:verdana;
+    color: white;
+}	

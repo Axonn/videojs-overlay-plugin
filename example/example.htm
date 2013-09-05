@@ -37,18 +37,18 @@
                 {
                 'plugins': {
                     'overlayPlugin': {
-						videoOverlays: [{
+						playerOverlays: [{
 							template: {
 								name: "test"
 								},
 							model: {
 								class: "vjsLogo",
-								name: "OverlayPlugin"
+								name: "ReelContent.co.uk"
 							},
 							displayTimes: [{
 								type: "switch",
-								start: function () { return 0.5 },
-								end: function () { return 5 }
+								start: function () { return 0.1 },
+								end: function (duration) { return duration }
 							}]
 						}],
 					
@@ -185,7 +185,7 @@
 								},
 							model: {
 								class: "calltoaction",
-								name: "<h1>Like call to actions?</h1><p><span style='color:#EEBBBB'>So do we!</span> That's why we built this plugin.<br /><span style='color:#FFE177'>Check out our videos live at <a href='http://www.reelcontent.co.uk'>www.reelcontent.co.uk</a></span></p><a href='http://www.reelcontent.co.uk'><button class='css3button'>Sure, why not?</button></a>"
+								name: "<h1>Like call to actions?</h1><p><span style='color:#EEBBBB'>So do we!</span> That's why we built this plugin.<br /><span style='color:#FFE177'>Check it out in action at <a href='http://www.reelcontent.co.uk'>www.reelcontent.co.uk</a></span><br /></p><a href='http://www.reelcontent.co.uk'>  <button class='css3button'>Sure, why not?</button></a>"
 							},
 							displayTimes: [{
 								type: "switch",
